@@ -1,0 +1,17 @@
+algoritmo "Exercicio11"
+var
+nome, disc: vetor [1..2] de caracter
+media: vetor [1..2] de REAL
+i: inteiro
+inicio
+Escreval ("Digite Nome do Aluno: ")
+Leia(nome[1])
+Escreval ("Informe a Disciplina: ")
+Leia (disc[2])
+Escreval ("Informe a Média Final ")
+leia (media[1])
+limpatela
+Escreval ("ALUNO: ",nome[1])
+Escreval ("DISCIPLINA: ", disc[2])
+Escreval ("MÉDIA FINAL: ", media[1])
+Fimalgoritmo
