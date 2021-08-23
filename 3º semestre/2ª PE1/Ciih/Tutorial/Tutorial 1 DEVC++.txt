@@ -1,0 +1,9 @@
+#include<stdio.h>//bibliotecas
+main () {//Função principal
+//Variáveis
+//Comandos
+//"\n = pula linha"
+//"\t = tabulação"
+//printf("O que sai na tela")
+//("pause>>NULL") = pausa do programa   
+    system ("pause>>NULL");

@@ -1,0 +1,25 @@
+I -> Inicio
+II -> Condição
+III -> Evolução
+x++=x+1
+x--=x-1
+
+DO-WHILE-------------while--------------FOR
+usuario                            requisito
+                                      fixo
+FOR
+for(I,II,III){
+}
+inicio,termo verdadeiro?, se sim incrementa
+
+WHILE
+I
+while (II){
+III
+}
+
+DO-WHILE
+I
+do{
+III
+}while(II);

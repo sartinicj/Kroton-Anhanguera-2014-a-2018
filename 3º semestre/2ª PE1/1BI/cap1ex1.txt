@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>;
+int Main{}
+(
+printf( Existem %d semanas no ano., 52);
+cout << endl;
+system ("PAUSE");
+return 0;
+)

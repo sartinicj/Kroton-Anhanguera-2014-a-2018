@@ -1,0 +1,14 @@
+OVERVIEW
+
+//variaveis
+int vet[10]
+float [35][4];
+//Acesso direto
+notas[0][1]=8.5;
+vet[9]=8;
+
+//Entrada
+scanf("%f", & notas[34][0]);
+for(l=0; l<34; l+1)
+for (c=0; c<4; c++)
+notas [l][c]=0]

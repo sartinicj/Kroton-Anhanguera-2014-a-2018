@@ -1,0 +1,9 @@
+plt cap3
+
+*for
+*while
+*do-while
+
+plt cap7
+*matriz unidimensional
+*vetor numerico

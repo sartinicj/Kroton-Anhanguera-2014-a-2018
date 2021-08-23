@@ -1,0 +1,14 @@
+MATRIZ
+-Pode ser int, float, char
+
+-Declara-se com dois colchetes:
+Exemplo: matrix [3][3];
+
+-Para colocar um elemento, usa-se também dois colchetes:
+Exemplo: matrix[1][1]=8.8;
+
+-Usa-se um for encadeado
+
+-O primeiro for (de fora) roda mais lento que o de dentro.
+
+-

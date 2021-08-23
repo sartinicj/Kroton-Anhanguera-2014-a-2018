@@ -1,0 +1,5 @@
+- Não separa-se variavel com ";"
+- Não se atribui valor para varíavel na declaração da mesma
+- No printf o %d deve estar ehtre aspas, separado do resto do texto
+- "\n" sempre no começo
+- Uma variavel d não foi declarada

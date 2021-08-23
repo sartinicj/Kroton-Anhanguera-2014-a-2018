@@ -1,0 +1,13 @@
+exemplos:
+main (){
+int X=8;
+int y=9;
+int z=10;
+int res;
+res = (x+2)>10
+
+testes
+(x+y)<=10      [0]
+0&&1           [0]
+10>=z          [1]
+(y+1)==(x+y)   [0]

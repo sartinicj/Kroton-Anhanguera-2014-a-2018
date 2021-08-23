@@ -1,0 +1,9 @@
+if ( *condição*) {
+//se condição verdadeira
+//comandos
+}else {//senão for verdade
+//comandos
+}
+
+----
+
