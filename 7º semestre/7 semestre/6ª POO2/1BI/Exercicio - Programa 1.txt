@@ -1,0 +1,12 @@
+
+public class Pessoa {
+ int nome;
+ int idade;
+ int count;
+ public void FazAniversario(){
+     Pessoa p = new Pessoa ();
+     p.nome='Sabrina';
+     p.idade= 4;
+        
+ }
+}
