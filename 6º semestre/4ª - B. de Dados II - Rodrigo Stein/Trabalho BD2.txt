@@ -1,0 +1,46 @@
+where cidade = 'Sao Carlos - SP'
+order by nome desc
+/*Exercício c.*/
+select nome from PROFESSOR
+where ADMISSAO < '01/01/1993'
+/*Exercício d.*/
+select nome from ALUNO
+where NOME like 'J%'
+/*Exercício e.*/
+select disc.nome 
+from DISCIPLINA disc inner join DISCIPLINACURSO discC
+on disc.NUMDISP = discC.NUMDISP inner join CURSO cc 
+on discC.NUMCURSO = cc.NUMCURSO
+where discC.NUMCURSO = 2143 
+/*Exercício f.*/
+select nome from Curso inner join DISCIPLINACURSO 
+on curso.NUMCURSO = DISCIPLINACURSO.NUMCURSO 
+where NUMDISP = 4
+/*Exercício g.*/
+select nome from DISCIPLINA inner join AULA
+on DISCIPLINA.NUMDISP = AULA.NUMDISP
+where AULA.NUMALUNO = 114 and AULA.SEMESTRE = '01/1998'
+/*Exercício h.*/
+select nome from DISCIPLINA inner join AULA
+on DISCIPLINA.NUMDISP = AULA.NUMDISP
+where AULA.NOTA < 7.0 and AULA.NUMALUNO = 116
+/*Exercício i.*/
+select nome from ALUNO inner join AULA
+on ALUNO.NUMALUNO = AULA.NUMALUNO
+where aula.NUMDISP = 4 and AULA.SEMESTRE= '01/1998' and aula.NOTA < 7 
+/*Exercício j.*/
+select DISCIPLINA.NOME from DISCIPLINA inner join AULA
+on DISCIPLINA.NUMDISP = AULA.NUMDISP inner join PROFESSOR
+on AULA.NUMFUNC = PROFESSOR.NUMFUNC
+where PROFESSOR.NUMFUNC=45690
+ /*Exercício k.*/
+ select PROFESSOR.NOME from PROFESSOR inner join AULA
+ on PROFESSOR.NUMFUNC = AULA.NUMFUNC inner join DISCIPLINA
+ on AULA.NUMDISP = DISCIPLINA.NUMDISP
+ where AULA.NUMDISP = 1 
+ /*Exercício l.*/
+ select MAX(nota) as 'Maior Nota', MIN(nota) as 'Menor Nota' from AULA
+ where AULA.SEMESTRE = '01/1998' and AULA.NUMDISP = 4   
+ /*Exercício m.*/
+ /*Exercício n.*/
+ /*Exercício o.*/
