@@ -1,0 +1,262 @@
+<style type='text/css'>@page WordSection {size: 841.95pt 595.35pt;mso-page-orientation: landscape;}.WordSection {page: WordSection;}td, th, div {font-family: 'Calibri', sans-serif;font-size: 11pt;}.sessaoTitulo {margin-bottom: 20px;text-align:center;}.sessaoTitulo h3 {color: #23527c;text-transform: uppercase;font-family: 'Calibri', sans-serif;}.title-inverted {width: 250px; text-align: right; background-color: #5086B7; color: #FFF; font-weight: bold; vertical-align: inherit!important; vertical-align: inherit; border: 1px solid #ddd; padding: 8px; line-height: 1.42857143;}.content-inverted {width: 350px; border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; font-size: 11pt; text-align: left;}.space-table {margin-top: 20px;}.title-table {text-align: center; font-size: 11pt; font-weight: bold; background-color: #5086B7; color: #FFF;}.col-export-div {width: 700px;}.content-unidades{font-size: 11pt; text-align: left; padding: 0!important; padding: 0; background-color: #FFF; border-bottom: 2px solid #5086B7; border-bottom: 2px solid #5086B7!important; border-top: 1px solid #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd;}.nomeUnidadeEnsino{padding: 5px 5px 5px 5px; background-color: #DAD9D9; width: 100%; border-bottom: 1px solid #ddd; text-transform: uppercase;}.nomeProduto {background-color: #E5E5E5; padding: 3px 0px 3px 5px; font-weight: normal!important; text-align:left;}.nomeProdutoTema{background-color: #F3F2F2; padding: 3px 15px 3px 20px;}.nomeConteudos{background-color: #FFF; padding: 3px 0 3px 5px; font-weight: normal!important; text-align:left;}.table-repeat{width: 100%;}.table-produto{width: 100%; background-color: #DAD9D9;}</style>
+                        <div class="sessaoTitulo">
+                            <h3>Relatório de Disciplina</h3>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <table class="table table-bordered">
+                                <tbody><tr>
+                                    <td class="title-inverted">Curso</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.Curso" class="col-export-div ng-binding">Cursos da Área de Engenharias, Exatas, Agrárias e TI - A</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title-inverted">Disciplina</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.Nome" class="col-export-div ng-binding">COMPUTAÇÃO GRÁFICA</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title-inverted">CH Total</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.CHTotal" class="col-export-div ng-binding">60h</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title-inverted">Competência Geral</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.CompetenciasGerais" class="col-export-div ng-binding">Conhecer os fundamentos e técnicas de aplicação para produzir designs de modelagem 3D e vídeos, graficamente, por meio de computação.</div>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <div class="space-table">
+                                <table class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="title-table" colspan="9">
+                                                UNIDADES DE ENSINO
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> DESENVOLVIMENTO DE MODELAGEM 3D</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Modelagem utilizando Lathe / Adobe Creative Cloud / Spline Modeling.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Introdução à computação gráfica e à modelagem. Tipos e aplicações.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Introdução a editoração vetorial. Edição de imagens.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Modelagens utilizando Box Modeling e Nurb / Adobe Creative Cloud.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> MODIFICADORES PARA MODELAGEM 3D</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID --><!-- ngIf: unidade.CompetenciaTecnicaID --><table class="table-repeat ng-scope" ng-if="unidade.CompetenciaTecnicaID" ng-repeat="tecnica in unidade.CompetenciaTecnicaID">
+                                                    <tbody><!-- ngIf: unidade.CompetenciaTecnicaID --><tr ng-if="unidade.CompetenciaTecnicaID" class="ng-scope">
+                                                        <td class="nomeProduto" colspan="9">
+                                                            <div class="ng-binding"><b>Competência Técnica:</b> Conhecer as definições, as técnicas e os métodos de aplicação de modelagem e de modificadores 3D.</div>
+                                                        </td>
+                                                    </tr><!-- end ngIf: unidade.CompetenciaTecnicaID -->
+                                                </tbody></table><!-- end ngIf: unidade.CompetenciaTecnicaID --><!-- end ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Introdução a Modificadores. Tipos e aplicações.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Modificadores- TURBOSMOOTH / SURFACE / Adobe Creative Cloud: aplicações</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome --><tbody ng-if="conteudo.ProdutoNome" class="ng-scope">
+                                                        <tr>
+                                                            <td class="nomeProdutoTema" colspan="9">
+                                                                <div class="ng-binding"><b>Produto:</b> Produção de modelagem 3D</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody><!-- end ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Modificadores - TURBOSMOOTH/ Adobe Creative Cloud: definições.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Modificadores - TURBOSMOOTH / Adobe Creative Cloud: principais ferramentas..</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> CAPTAÇÃO DE IMAGENS</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Iluminação.- Tipos de aplicação.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Sombras e penumbras.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Câmeras, tipos, lentes, zoom.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Introdução aos shaders_ Mental Ray e Texturas.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> PARTICULARIDADE DO VÍDEO</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID --><!-- ngIf: unidade.CompetenciaTecnicaID --><table class="table-repeat ng-scope" ng-if="unidade.CompetenciaTecnicaID" ng-repeat="tecnica in unidade.CompetenciaTecnicaID">
+                                                    <tbody><!-- ngIf: unidade.CompetenciaTecnicaID --><tr ng-if="unidade.CompetenciaTecnicaID" class="ng-scope">
+                                                        <td class="nomeProduto" colspan="9">
+                                                            <div class="ng-binding"><b>Competência Técnica:</b> Conhecer as técnicas de captura de imagens e para produção de vídeo.</div>
+                                                        </td>
+                                                    </tr><!-- end ngIf: unidade.CompetenciaTecnicaID -->
+                                                </tbody></table><!-- end ngIf: unidade.CompetenciaTecnicaID --><!-- end ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Path na animação. Movimento de câmera. Track view- modificando</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome --><tbody ng-if="conteudo.ProdutoNome" class="ng-scope">
+                                                        <tr>
+                                                            <td class="nomeProdutoTema" colspan="9">
+                                                                <div class="ng-binding"><b>Produto:</b> Produção de vídeo</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody><!-- end ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Diferença entre UVW MAP e UNWRAP MAPPING / Illustrator, In design.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Aplicação de mapa de coordenadas em embalagem e sólidos.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Criando brilho. Hair/Fur aplicado na composição na composição da cena.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    

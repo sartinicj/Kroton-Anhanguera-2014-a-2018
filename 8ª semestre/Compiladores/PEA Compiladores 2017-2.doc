@@ -1,0 +1,286 @@
+<style type='text/css'>@page WordSection {size: 841.95pt 595.35pt;mso-page-orientation: landscape;}.WordSection {page: WordSection;}td, th, div {font-family: 'Calibri', sans-serif;font-size: 11pt;}.sessaoTitulo {margin-bottom: 20px;text-align:center;}.sessaoTitulo h3 {color: #23527c;text-transform: uppercase;font-family: 'Calibri', sans-serif;}.title-inverted {width: 250px; text-align: right; background-color: #5086B7; color: #FFF; font-weight: bold; vertical-align: inherit!important; vertical-align: inherit; border: 1px solid #ddd; padding: 8px; line-height: 1.42857143;}.content-inverted {width: 350px; border: 1px solid #ddd; padding: 8px; line-height: 1.42857143; vertical-align: top; font-size: 11pt; text-align: left;}.space-table {margin-top: 20px;}.title-table {text-align: center; font-size: 11pt; font-weight: bold; background-color: #5086B7; color: #FFF;}.col-export-div {width: 700px;}.content-unidades{font-size: 11pt; text-align: left; padding: 0!important; padding: 0; background-color: #FFF; border-bottom: 2px solid #5086B7; border-bottom: 2px solid #5086B7!important; border-top: 1px solid #ddd; border-left: 1px solid #ddd; border-right: 1px solid #ddd;}.nomeUnidadeEnsino{padding: 5px 5px 5px 5px; background-color: #DAD9D9; width: 100%; border-bottom: 1px solid #ddd; text-transform: uppercase;}.nomeProduto {background-color: #E5E5E5; padding: 3px 0px 3px 5px; font-weight: normal!important; text-align:left;}.nomeProdutoTema{background-color: #F3F2F2; padding: 3px 15px 3px 20px;}.nomeConteudos{background-color: #FFF; padding: 3px 0 3px 5px; font-weight: normal!important; text-align:left;}.table-repeat{width: 100%;}.table-produto{width: 100%; background-color: #DAD9D9;}</style>
+                        <div class="sessaoTitulo">
+                            <h3>Relatório de Disciplina</h3>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <table class="table table-bordered">
+                                <tbody><tr>
+                                    <td class="title-inverted">Curso</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.Curso" class="col-export-div ng-binding">Cursos da Área de Engenharias, Exatas, Agrárias e TI - J</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title-inverted">Disciplina</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.Nome" class="col-export-div ng-binding">COMPILADORES</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title-inverted">CH Total</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.CHTotal" class="col-export-div ng-binding">60h</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title-inverted">Competência Geral</td>
+                                    <td class="content-inverted" colspan="8">
+                                        <div ng-bind-html="relatorio.CompetenciasGerais" class="col-export-div ng-binding">Conhecer e aplicar o processo de especificação e implementação de linguagens de programação, a partir dos conceitos, modelos, técnicas e ferramentas que compõem a Teoria das Linguagens formais e a Teoria de Compiladores.</div>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-xs-12">
+                            <div class="space-table">
+                                <table class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="title-table" colspan="9">
+                                                UNIDADES DE ENSINO
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> ESTRUTURA E FUNCIONAMENTO DE UM COMPILADOR</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID --><!-- ngIf: unidade.CompetenciaTecnicaID --><table class="table-repeat ng-scope" ng-if="unidade.CompetenciaTecnicaID" ng-repeat="tecnica in unidade.CompetenciaTecnicaID">
+                                                    <tbody><!-- ngIf: unidade.CompetenciaTecnicaID --><tr ng-if="unidade.CompetenciaTecnicaID" class="ng-scope">
+                                                        <td class="nomeProduto" colspan="9">
+                                                            <div class="ng-binding"><b>Competência Técnica:</b> Conhecer a estrutura, o funcionamento e a implementação de um compilador, através de uma visão geral sobre o processo de compilação sob o ponto de vista de implementação, além de adquirir noções básicas sobre a teoria das linguagens formais.</div>
+                                                        </td>
+                                                    </tr><!-- end ngIf: unidade.CompetenciaTecnicaID -->
+                                                </tbody></table><!-- end ngIf: unidade.CompetenciaTecnicaID --><!-- end ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Introdução à compilação</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Estrutura de um compilador</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Tipos de tradutores. Tabela de Símbolos.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Tradutores de linguagens de programação</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome --><tbody ng-if="conteudo.ProdutoNome" class="ng-scope">
+                                                        <tr>
+                                                            <td class="nomeProdutoTema" colspan="9">
+                                                                <div class="ng-binding"><b>Produto:</b> Projeto de um compilador - Parte 1 - Planejamento de construção e instalação.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody><!-- end ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> ANÁLISE LÉXICA, SINTÁTICA E SEMÂNTICA</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID --><!-- ngIf: unidade.CompetenciaTecnicaID --><table class="table-repeat ng-scope" ng-if="unidade.CompetenciaTecnicaID" ng-repeat="tecnica in unidade.CompetenciaTecnicaID">
+                                                    <tbody><!-- ngIf: unidade.CompetenciaTecnicaID --><tr ng-if="unidade.CompetenciaTecnicaID" class="ng-scope">
+                                                        <td class="nomeProduto" colspan="9">
+                                                            <div class="ng-binding"><b>Competência Técnica:</b> Conhecer e ser capaz de especificar aspectos léxicos, sintáticos e semântica de linguagens através de autômatos e gramáticas, além de conhecer critérios e características usados no projeto/avaliação de Linguagens de Programação.</div>
+                                                        </td>
+                                                    </tr><!-- end ngIf: unidade.CompetenciaTecnicaID -->
+                                                </tbody></table><!-- end ngIf: unidade.CompetenciaTecnicaID --><!-- end ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Análise léxica: Conceitos Básicos; Buferização da entrada; Especificação dos tokens; Papel do analisador léxico; Reconhecimento de tokens</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Análise sintática: Análise sintática descendente e análise sintática ascendente; Análise sintática Top-Down; Análise Ssntática Botton-up; O papel do analisado sintático; Revisão de gramáticas livres de contexto</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Gramáticas livres do contexto em análises</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Análise Semântica: Detecção de Erros; Verificação de Tipos</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome --><tbody ng-if="conteudo.ProdutoNome" class="ng-scope">
+                                                        <tr>
+                                                            <td class="nomeProdutoTema" colspan="9">
+                                                                <div class="ng-binding"><b>Produto:</b> Projeto de um compilador - Parte 2 - Definição de especificação para aspectos léxicos, sintáticos e semântica de linguagens através de autômatos e gramáticas.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody><!-- end ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> TRADUÇÃO DIRIGIDA PELA SINTAXE</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID --><!-- ngIf: unidade.CompetenciaTecnicaID --><table class="table-repeat ng-scope" ng-if="unidade.CompetenciaTecnicaID" ng-repeat="tecnica in unidade.CompetenciaTecnicaID">
+                                                    <tbody><!-- ngIf: unidade.CompetenciaTecnicaID --><tr ng-if="unidade.CompetenciaTecnicaID" class="ng-scope">
+                                                        <td class="nomeProduto" colspan="9">
+                                                            <div class="ng-binding"><b>Competência Técnica:</b> Conhecer e saber aplicar as ferramentas e metodologias para análise e tradução dirigida pela sintaxe, assim como conhecer as principais técnicas e ferramentas de apoio usadas na construção de compiladores, sabendo usá-las na especificação e implementação de linguagens de programação.</div>
+                                                        </td>
+                                                    </tr><!-- end ngIf: unidade.CompetenciaTecnicaID -->
+                                                </tbody></table><!-- end ngIf: unidade.CompetenciaTecnicaID --><!-- end ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Tradução dirigida pela sintaxe: Avaliação bottom-up de definições s-atribuídas</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Construção de árvores sintáticas</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Definições dirigidas pela sintaxe; Definições l-atribuídas</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Tradução top-down</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome --><tbody ng-if="conteudo.ProdutoNome" class="ng-scope">
+                                                        <tr>
+                                                            <td class="nomeProdutoTema" colspan="9">
+                                                                <div class="ng-binding"><b>Produto:</b> Projeto de um compilador - Parte 3 - Aplicar as ferramentas e metodologias para análise e tradução dirigida pela sintaxe.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody><!-- end ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino --><tr ng-repeat="unidade in unidadesEnsino" class="ng-scope">
+                                            <td class="content-unidades" colspan="9">
+                                                <table class="table-produto">
+                                                    <tbody><tr>
+                                                        <td class="nomeUnidadeEnsino ng-binding" colspan="9"><b>Unidade de Ensino:</b> GERAÇÃO E OTIMIZAÇÃO DE CÓDIGO</td>
+                                                    </tr>
+                                                </tbody></table>
+
+                                                <!-- ngRepeat: tecnica in unidade.CompetenciaTecnicaID --><!-- ngIf: unidade.CompetenciaTecnicaID --><table class="table-repeat ng-scope" ng-if="unidade.CompetenciaTecnicaID" ng-repeat="tecnica in unidade.CompetenciaTecnicaID">
+                                                    <tbody><!-- ngIf: unidade.CompetenciaTecnicaID --><tr ng-if="unidade.CompetenciaTecnicaID" class="ng-scope">
+                                                        <td class="nomeProduto" colspan="9">
+                                                            <div class="ng-binding"><b>Competência Técnica:</b> Conhecer e estar apto a utilizar as ferramentas e linguagens para geração e otimização de código, assim como obter subsídios que permitam um melhor entendimento, utilização e avaliação das Linguagens de Programação.</div>
+                                                        </td>
+                                                    </tr><!-- end ngIf: unidade.CompetenciaTecnicaID -->
+                                                </tbody></table><!-- end ngIf: unidade.CompetenciaTecnicaID --><!-- end ngRepeat: tecnica in unidade.CompetenciaTecnicaID -->
+                                                <!-- ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Geração de código intermediário: Declarações</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Enunciados de atribuição</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Linguagens intermediárias</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID --><table class="table-repeat ng-scope" ng-repeat="conteudo in unidade.ConteudoID">
+                                                    <thead>
+                                                        <tr>
+                                                            <td class="nomeConteudos" colspan="9">
+                                                                <div class="ng-binding"><b>Conteúdo:</b> Otimização de Código</div>
+                                                            </td>
+                                                        </tr>
+                                                    </thead>
+                                                    <!-- ngIf: conteudo.ProdutoNome --><tbody ng-if="conteudo.ProdutoNome" class="ng-scope">
+                                                        <tr>
+                                                            <td class="nomeProdutoTema" colspan="9">
+                                                                <div class="ng-binding"><b>Produto:</b> Projeto de um compilador - Parte 4 - Utilizar as ferramentas e linguagens para geração e otimização de código.</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody><!-- end ngIf: conteudo.ProdutoNome -->
+                                                </table><!-- end ngRepeat: conteudo in unidade.ConteudoID -->
+                                            </td>
+                                        </tr><!-- end ngRepeat: unidade in unidadesEnsino -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    
