@@ -1,0 +1,79 @@
+create database cc
+create table paciente(
+codigo integer not null,
+nome varchar(100) not null,
+endereço varchar (200),
+cidade varchar(100),
+estado varchar(2),
+cep varchar(20),
+fone varchar(20),
+
+primary key(codigo))
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade, estado,cep,fone)
+values
+(1,'Joao da Silva','rua 10','Jundiai', 'SP','10700-000','101010')
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(2,'Maria Helena','rua 20','Jundiai','SP','10700-001','102030')
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(3,'Joaquim Jose','rua 30','Valinhos','SP','13276-123','203040')
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(4,'Joana Maria','rua 25','Jales','SP','13500-000','123456')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(5,'Mariana Silva','rua 10', 'Varginha', 'mg','101010-000','1245663')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(6,'Luana Piovana','rua 20','Tocantins','to','123456-000','44556677')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(7,'Sharon Stone','rua 55','Jundiai','SP','123654-000','123123311')
+
+
+create table consultas(
+idconsulta integer not null,
+codigopaciente integer not null,
+data date, 
+hora time,
+valor decimal (10,2),
+obs varchar(200),
+primary key(idconsulta),
+foreign key(codigopaciente)references paciente(codigo))
+set dateformat dmy 
+select * from consultas
+
+
+delete consultas
+
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor,obs)
+values
+(1,1,'10/02/2015','10:00',100,'')
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor,obs)
+values
+(2,2,'12/02/2015','12:00',200,'')
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor,obs)
+values
+(3,3,'15/03/2015','13:00',300,'')
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor,obs)
+values
+(4,4,'18/03/2015','14:00',150,'')
+
+
+

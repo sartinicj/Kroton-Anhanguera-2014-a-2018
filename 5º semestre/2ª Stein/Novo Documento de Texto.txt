@@ -1,0 +1,153 @@
+create database cc
+create table paciente(
+codigo integer not null,
+nome varchar(100) not null,
+endereço varchar (200),
+cidade varchar(100),
+estado varchar(2),
+cep varchar(20),
+fone varchar(20),
+primary key(codigo))
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade, estado,cep,fone)
+values
+(1,'Sharon Stones','rua 10','Jades', 'SP','15750-000','36323535')
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(2,'Julia Roberts','rua 22','Urania','SP','15670-000','36324678')
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(3,'Jose da Silva','rua 29','Jales','SP','15750-000','36789000')
+select * from paciente
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(4,'cleo Pires','rua 15','Jales','SP','15750-000','36321213')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(5,'Mel Lisboa','rua 18', 'Fernandopolis', 'SP','15670-000','36321567')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(6,'Vera Ficher','','Jundiai','','','')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(7,'Rita Cadilac','rua 20','Valinhos','SP','','')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(8,'Joana Prado','rua 18','Louvera','sp','','')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(9,'Daniela Motoserra','rua 30','Jundiai','SP','','')
+insert into paciente 
+(codigo,nome,endereço, cidade,estado,cep,fone)
+values
+(10,'Joao Luis','rua 10','Pocos de caldas','MG','','')
+
+create table consultas(
+idconsulta integer not null,
+codigopaciente integer not null,
+data date, 
+hora time,
+valor decimal (10,2),
+obs varchar(200),
+primary key(idconsulta),
+foreign key(codigopaciente)references paciente(codigo))
+set dateformat dmy 
+select * from consultas
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(1,1,'01/01/2013','10:00',100)
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(2,2,'01/03/2013','11:00',150)
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(3,3,'10/04/2013','10:00',100)
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(4,4,'20/02/2013','08:00',150)
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(5,5,'12/02/2013','15:00',200)
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(6,6,'15/04/2013','16:00',100)
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(7,1,'10/01/2013','12:00',140)
+insert into consultas
+(idconsulta,codigopaciente,data,hora,valor)
+values
+(8,1,'15/01/2013','13:00',150)
+
+
+
+select * from consultas
+alter table paciente
+add email varchar(50)
+
+update paciente
+set email='mel@gmail.com'
+where nome='Mel Lisboa'
+select * from paciente
+
+alter table paciente drop column fone
+
+update paciente 
+set nome='Joaquim Jose'
+where codigo=3
+
+update paciente
+set estado='SP',endereço='rua 24'
+where nome='vera Ficher'
+
+update paciente
+set cep='15700-000'
+where cidade='Jales'
+
+alter table consultas drop column obs
+
+update consultas 
+set valor=valor *1.1
+where data between
+'01/04/2013' and '30/04/2013'
+
+update consultas 
+set valor=valor +200
+where codigopaciente in(1,3,6)
+select * from consultas
+
+update consultas
+set valor=valor * 0.8
+where hora='10:00'
+
+delete from paciente 
+where cidade='Valinhos'
+
+delete from paciente
+where cidade='Louveira' or endereço='rua 30'
+
+delete from consultas 
+where data 
+between '10/01/2013' and '15/01/2013'
+
+
+delete from paciente
+where estado='MG'

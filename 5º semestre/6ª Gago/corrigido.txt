@@ -1,0 +1,40 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Registro {
+
+	JFrame one =  new JFrame();
+	JPanel two = new JPainel();
+	JLabel three = new JLabel("Número da mesa: "); //<-- Adicionando a Jlabel
+	JTextField four = new JTextField(10); //Add a JTextField
+	
+	
+	public Registro{
+	setdefaultcloseoperation(JFrame.EXIT_ON_CLOSE); //<-- Configuração de tela
+	one.setSize(800,640); //<-- Configuração de tela
+	one.setTitle("CADASTRO DE PEDIDO"); //<-- Configuração de tela
+	one.setVisible(true); //<-- Configuração de tela
+	
+	
+	
+	add (three); //<-- chamando a label
+	
+	one.add (two); //chamando a JPanel
+	
+	JTextfield four = new JTextfield();//<-- Chamando a Jtextfield
+
+	
+	}	
+}
+	public static void main (String args[]){
+	
+		Registro new(); //<-- Chamando a classe Registro
+	
+	}
+	
+	
+	
+	
+	
+}

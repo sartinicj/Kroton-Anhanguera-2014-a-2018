@@ -1,0 +1,53 @@
+select * from detalhes_pedido
+
+select min(preco_unitario) as menorpreco
+from detalhes_pedido where
+produto = 'S10_1678'
+
+select SUM(valor) as total
+from pagamentos where cliente=121
+
+select sum(estoque)
+ from produtos where produto_codigo 
+ in ('s10_4757','s10_4962', 's12_1108')
+ 
+ select AVG(preco_unitario)
+ from detalhes_pedido
+ where produto='s12_1108'
+ 
+ select * from detalhes_pedido
+ where produto='s12_1108'
+ 
+ select COUNT(*) from produtos
+ where preco_sugerido>100
+ 
+ select count(pais) from clientes
+ where pais='usa'
+ 
+ select * from produtos
+ where nome like '%ford%'
+ and descricao like '%replica%'
+ 
+ select pais, COUNT(*) from clientes
+ group by pais
+ 
+ select categoria, sum(preco_sugerido) 
+  from produtos group by categoria
+  
+  select pais, AVG(limite_credito)
+  from clientes group by pais
+  having AVG(limite_credito)>0
+  order by AVG(limite_credito) asc
+  
+  select * from pagamentos
+  
+  select cliente, SUM(valor) as total_pago
+  from pagamentos
+  group by cliente
+  
+  
+  select pais, count(*) from clientes
+  where pais like '%e%'
+  group by pais 
+  having COUNT(*)>10
+  order by COUNT(*) desc
